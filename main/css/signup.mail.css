@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#mail {
+    text-align: center;
+    line-height: 10;
+}
+
+form {
+    text-align: center;
+}
+
+p.error {
+    text-align: center;
+    color: red;
+}
+
+.home {
+    text-align: center;
+}

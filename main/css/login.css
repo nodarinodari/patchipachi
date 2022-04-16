@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+}
+
+#mail {
+    text-align: center;
+}
+
+#pass {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+p.error {
+    color: red;
+}
+
+a {
+    text-align: center;
+}

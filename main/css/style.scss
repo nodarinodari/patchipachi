@@ -1,0 +1,147 @@
+@import "mixin";
+
+$cBlack: #000;
+$cOrange: #E55614;
+$cRed: rgb(252, 55, 55);
+$cPurple: purple;
+$cBlueMoreLight: #DDEDFB;
+$cBlueLight: #9ACBF4;
+$cBlue: #1586E7;
+$cBlueLDark: #0C4C84;
+$cBlueDark: #062642;
+$cWhite: #FFFFFF;
+
+
+body, h1, h2, h3, h4, h5, img, p, a {
+    margin: 0;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+ul, li, ol, a {
+    text-decoration-style: none;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+a:link {
+    color: $cBlueLDark;
+}
+
+a:visited {
+    color: $cBlueLDark;
+}
+
+a:hover {
+    color: $cBlue;
+    text-decoration: underline;
+}
+
+a {
+    display: block;
+}
+
+
+.header-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    height: 100px;
+    border-bottom:  2px solid $cBlack;
+    // background-color: $cBlueMoreLight;
+
+    & .sns-link-container {
+        text-align: center;
+        width: 20%;
+        font-size: 1.25rem;
+
+        
+        & > ul {
+            display: flex;
+            justify-content: space-between;
+
+            & > li{
+                & img {
+                    height: 2rem;
+                    width: auto;
+                }
+            }
+        }
+
+
+    }
+
+    & .member-register-contaier {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        & > p {
+            border-bottom: 1px dotted $cBlack;
+        }
+
+        & .member-register-lists {
+            display: flex;
+            
+            & > li {
+                margin: 0px 5px;
+                border-radius: 10%;
+                border: 5px solid $cBlue;
+                background-color: $cBlueMoreLight;
+                &:hover {
+                    opacity: 0.7;
+                }
+                
+                & > a {
+                    padding: 8px;
+                    font-weight: bold;
+                    
+                }
+            }
+        }
+    }
+}
+
+.container {
+    
+    margin: 0 5%;
+    .nav-lists-container {
+        
+        & .nav-lists {
+            display: flex;
+            justify-content: space-around;
+            background: linear-gradient(to bottom, $cBlueLight, $cWhite);
+            border-bottom: 1px solid $cBlueLight;
+
+            & > li {
+                padding: 1rem;
+                border-left: 1px solid $cBlue;
+                font-weight: bold;
+                line-height: 40px;
+                font-size: 1.25rem;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+
+    & section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & .slide-show-container {
+            border: 5px solid $cBlueDark;
+            padding: 3rem;
+        }
+    }
+}
+
+
+
