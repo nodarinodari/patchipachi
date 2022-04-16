@@ -33,5 +33,5 @@
         </td>
     </tr>
 </table>
-<input type="button" class="sample_btn" id="submit-btn" value="確認" name="3">
+<input type="button" class="sample_btn" id="btn_confirm" value="確認" name="3">
 <script src="../../js/index3.js"></script>

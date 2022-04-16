@@ -9,7 +9,7 @@
     <tr>
         <th class="contact-item">郵便番号</th>
         <td class="contact-body">
-            <input type="number" name="post" class="form-text" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','Prefectures','addr11');" value="<?php if( !empty($_SESSION['zip']) ){ echo $_SESSION['zip']; } ?>" required/>
+            <input type="number" name="post" class="form-text" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','Prefectures','addr11');" required/>
             <p class=" error" id="errorpost"></p>
             <p class="error" id="errorPost"></p>
             <p class="message">*例）1234567</p>
@@ -21,7 +21,7 @@
     <tr>
         <th class="contact-item">都道府県</th>
         <td class="contact-body">
-            <input type="text" name="Prefectures" class="form-text" size="20" value="<?php if( !empty($_SESSION['yuubin']) ){ echo $_SESSION['yuubin']; } ?>"/>
+            <input type="text" name="Prefectures" class="form-text" size="20" readonly>
             <p class="message">*ここは自動的に割り振りされます。</p>
             <p class="message">*入力はできません。</p>
         </td>
@@ -30,7 +30,7 @@
     <tr>
         <th class="contact-item">市区町村</th>
         <td class="contact-body">
-            <input type="text" name="addr11" class="form-text" size="60" value="<?php if( !empty($_SESSION['municipalities']) ){ echo $_SESSION['municipalities']; } ?>" />
+            <input type="text" name="addr11" class="form-text" size="60" readonly/>
             <p class="error" id="errorAdd11"></p>
             <p class="message">*ここは自動的に割り振りされます。</p>
             <p class="message">*入力はできません。</p>
@@ -40,7 +40,7 @@
     <tr>
         <th class="contact">番地</th>
         <td class="contact-body">
-            <input type="number" name="address" class="form-text" size="30" value="<?php if( !empty($_SESSION['housenumber']) ){ echo $_SESSION['housenumber']; } ?>"/>
+            <input type="number" name="address" class="form-text" size="30">
             <p class="message">*例）1-1-1</p>
         </td>
     </tr>
@@ -48,7 +48,7 @@
     <tr>
         <th class="contact">建物</th>
         <td class="contact-body">
-            <input type="text" name="build" class="form-text" size="30" value="<?php if( !empty($_SESSION['bulid']) ){ echo $_SESSION['bulid']; } ?>">
+            <input type="text" name="build" class="form-text" size="30">
             <p class="error" id="errorAddress"></p>
             <p class="message">*例）山田ビル</p>
         </td>

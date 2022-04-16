@@ -19,11 +19,6 @@ session_start();
 </head>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<?php if (!isset($_SESSION["id"])) { ?>
-   <script src="../../js/include.js"></script>
-<?php }else{?>
-   <script src="../../js/include2.js"></script>
-<?php }?>
 
 <body>
     <div id="global-container">
@@ -80,8 +75,8 @@ session_start();
                         <ul class="member-register-lists">
                             <!-- ナビゲーションの横並び制御用 -->
             
-                                <li><a href="#">会員登録</a></li>
-                                <li><a href="#">マイページ</a></li>
+                                <li><a href="../login/signup.mail.php">会員登録</a></li>
+                                <li><a href="../login/login.php">マイページ</a></li>
                                 <li><a href="#">カートを見る</a></li>
                         </ul>
                     </div>

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
 
     // windowScroll = window.pageYOffset;
@@ -9,22 +9,22 @@ document.addEventListener('DOMContentLoaded', function () {
     //     menuOpen.style.top =`calc(${this.DOM.windowHeight - this.DOM.windowScroll + this.DOM.headerHeight}px)`;
     //     console.log(this.DOM.menuOpen.style.top);
     // })
-    const so4 = new  MobileMenu();
+    const so4 = new MobileMenu();
 });
 
-$(function(){
+$(function() {
     var state = false;
     var pos;
-    $('.mobile-menu__btn').click(function(){
-    if (state == false) {
-    pos = $(window).scrollTop();
-    $('body').addClass('fixed').css({'top': -pos});
-    state = true;
-    } else {
-    $('body').removeClass('fixed').css({'top': 0});
-    // $('.mobile-menu').removeClass('.menu-open').css({'top': pos + 80});
-    window.scrollTo(0, pos);
-    state = false;
-    }
+    $('.mobile-menu__btn').click(function() {
+        if (state == false) {
+            pos = $(window).scrollTop();
+            $('body').addClass('fixed').css({ 'top': -pos });
+            state = true;
+        } else {
+            $('body').removeClass('fixed').css({ 'top': 0 });
+            // $('.mobile-menu').removeClass('.menu-open').css({'top': pos + 80});
+            window.scrollTo(0, pos);
+            state = false;
+        }
     });
 });

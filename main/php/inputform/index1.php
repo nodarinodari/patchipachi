@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="../../css/index1.css">
 <script src="../../js/add.js"></script>
 <script src="../../js/index1.js"></script>
-<script src="../../js/.js"></script>
 
 <?php
 session_start();
@@ -64,7 +63,7 @@ if(empty($_GET)) {
 /**
 * 確認する(btn_confirm)押した後の処理
 */
-if(isset($_POST['1'])){
+if(isset($_POST['3'])){
 	if(empty($_POST)) {
 		header("Location: registration_mail.php");
 		exit();
@@ -74,27 +73,37 @@ if(isset($_POST['1'])){
 		$kananame = isset($_POST['kananame']) ? $_POST['kananame'] : NULL;
 		$name = isset($_POST['name']) ? $_POST['name'] : NULL;
 		$password = isset($_POST['パスワード']) ? $_POST['パスワード'] : NULL;
-        $phone = isset($_POST['電話']) ? $_POST['電話'] : NULL;
-        $index1 = isset($_SESSION['index1']) ? $_SESSION['index1'] : NULL;
+        $phone = isset($_POST['phone']) ? $_POST['phone'] : NULL;
+        $contact_sex_txt = isset($_SESSION['contact-sex-txt']) ? $_SESSION['contact-sex-txt'] : NULL;
     //２ページ目
-        $zip = isset($_POST['zip']) ? $_POST['zip'] : NULL;
-		$kenname = isset($_POST['yuubin']) ? $_POST['yuubin'] : NULL;
-		$municipalities = isset($_POST['municipalities']) ? $_POST['municipalities'] : NULL;
-		$cityname = isset($_POST['housenumber']) ? $_POST['housenumber'] : NULL;
-		$townname = isset($_POST['bulid']) ? $_POST['bulid'] : NULL;
+        $post = isset($_POST['post']) ? $_POST['post'] : NULL;
+		$Prefectures = isset($_POST['yuubin']) ? $_POST['yuubin'] : NULL;
+		$addr11 = isset($_POST['addr11']) ? $_POST['addr11'] : NULL;
+		$address = isset($_POST['address']) ? $_POST['address'] : NULL;
+		$build = isset($_POST['bulid']) ? $_POST['bulid'] : NULL;
+    //３ページ目
+        $pay = isset($_POST['pay']) ? $_POST['pay'] : NULL;
+        $creditnumber = isset($_POST['creditnumber']) ? $_POST['creditnumber'] : NULL;
+        $card = isset($_POST['card']) ? $_POST['card'] : NULL;
+        $code = isset($_POST['code']) ? $_POST['code'] : NULL;
      //セッションに登録
      //１ページ目
         $_SESSION['kananame']=$kananame;
 		$_SESSION['name'] = $name;
-		$_SESSION['電話'] = $phone;
+		$_SESSION['phone'] = $phone;
 		$_SESSION['password'] = $password;
-        $_SESSION['index1'] = $index1;
+        $_SESSION['contact-sex-txt'] = $contact_sex_txt;
      //２ページ目
-		$_SESSION['zip'] = $zip;
-		$_SESSION['yuubin'] = $kenname;
-		$_SESSION['municipalities'] = $municipalities;
-		$_SESSION['housenumber'] = $cityname;
-		$_SESSION['bulid'] = $townname;
+		$_SESSION['form-text'] = $post;
+		$_SESSION['Prefectures'] = $Prefectures;
+		$_SESSION['addr11'] = $addr11;
+		$_SESSION['address'] = $address;
+		$_SESSION['bulid'] = $build;
+    //３ページ目
+        $_SESSION['pay'] = $pay;
+		$_SESSION['creditnumber'] = $creditnumber;
+		$_SESSION['card'] = $card;
+        $_SESSION['code'] = $code;
 	}
 }
 
@@ -107,16 +116,16 @@ if(isset($_POST['btn_submit'])){
 		$urltoken = hash('sha256', uniqid(rand(), 1));
         $url = "http://localhost/patchipachi/main/php/login/login.php?urltoken=" . $urltoken;
 
-		$sql = "INSERT INTO main_user (mail,kana_name,name,password,zip,ken_name,city_name,town_name,building_name,phone,status,created_at,updated_at) VALUES (:mail,:kananame,:name,:password_hash,:yuubin,:kenname,:cityname,:townname,:build,:phone,1,now(),now())";
+		$sql = "INSERT INTO main_user (mail,kana_name,name,password,post,ken_name,city_name,town_name,building_name,phone,status,created_at,updated_at) VALUES (:mail,:kananame,:name,:password_hash,:yuubin,:Prefectures,:address,:build,:build,:phone,1,now(),now())";
        $stm = $pdo->prepare($sql);
 	   $stm->bindValue(':mail', $_SESSION['mail'], PDO::PARAM_STR);
 		$stm->bindValue(':kananame', $_SESSION['kananame'], PDO::PARAM_STR);
 		$stm->bindValue(':name', $_SESSION['name'], PDO::PARAM_STR);
 		$stm->bindValue(':password_hash', $password_hash, PDO::PARAM_STR);
-		$stm->bindValue(':yuubin', $_SESSION['zip'], PDO::PARAM_STR);
-		$stm->bindValue(':kenname', $_SESSION['yuubin'], PDO::PARAM_STR);
-		$stm->bindValue(':cityname', $_SESSION['municipalities'], PDO::PARAM_STR);
-		$stm->bindValue(':townname',  $_SESSION['housenumber'], PDO::PARAM_STR);
+		$stm->bindValue(':yuubin', $_SESSION['post'], PDO::PARAM_STR);
+		$stm->bindValue(':Prefectures', $_SESSION['yuubin'], PDO::PARAM_STR);
+		$stm->bindValue(':address', $_SESSION['addr11'], PDO::PARAM_STR);
+		$stm->bindValue(':build',  $_SESSION['address'], PDO::PARAM_STR);
 		$stm->bindValue(':build',  $_SESSION['bulid'], PDO::PARAM_STR);
 		$stm->bindValue(':phone', $_SESSION['phone'], PDO::PARAM_STR);
 		$stm->execute();
@@ -196,11 +205,11 @@ EOM;
             <th class="contact-item">名前</th>
             <td class="contact-body">
                 <p>漢字</p>
-                <input type="text" name="name" class="form-text" requiredonKeyDown="return next_text(1);" value="<?php if( !empty($_SESSION['name']) ){ echo $_SESSION['name']; } ?>"/>
+                <input type="text" name="name" class="form-text" requiredonKeyDown="return next_text(1);">
                 <p class="error" id="errorname"></p>
                 <p class="message">*例）山田太郎</p>
                 <p>フリガナ</p>
-                <input type="text" name="kananame" class="form-text"  value="<?php if( !empty($_SESSION['kananame']) ){ echo $_SESSION['kananame']; } ?>" required/>
+                <input type="text" name="kananame" class="form-text" required/>
                 <p class="error" id="errorfuri"></p>
                 <p class="message">*例）ヤマダタロウ</p>
                 <p class="message">*カタカナのみで入力してください。</p>
@@ -211,22 +220,22 @@ EOM;
             <td class="contact-body">
                 <label class="contact-sex">
                 <input type="radio" name="性別" />
-                <span class="contact-sex-txt">男</span>
+                <span class="contact-sex-txt" name="contact-sex-txt">男</span>
             </label>
                 <label class="contact-sex">
                 <input type="radio" name="性別" />
-                <span class="contact-sex-txt">女</span>
+                <span class="contact-sex-txt" name="contact-sex-txt">女</span>
             </label>
                 <label class="contact-sex">
                 <input type="radio" name="性別" />
-                <span class="contact-sex-txt">指定しない</span>
+                <span class="contact-sex-txt" name="contact-sex-txt">指定しない</span>
             </label>
             </td>
         </tr>
         <tr>
-            <th class="contact-item">電話</th>
+            <th class="contact-item">電話番号</th>
             <td class="contact-body">
-                <input type="tel" name="電話" class="form-text" value="<?php if( !empty($_SESSION['電話']) ){ echo $_SESSION['電話']; } ?>"required/>
+                <input type="tel" name="phone" class="form-text"required/>
                 <p class="error" id="errorphone"></p>
                 <p class="message">*例）0000000</p>
                 <p class="message">*半角英数字で入力してください。</p>
