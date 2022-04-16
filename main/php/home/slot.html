@@ -1,14 +1,10 @@
-<?php
-session_start();
-?>
-    
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PachiFre トップページ</title>
+    <title>PachiFre 商品ページ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
@@ -17,14 +13,6 @@ session_start();
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<?php if (!isset($_SESSION["id"])) { ?>
-   <script src="../../js/include.js"></script>
-<?php }else{?>
-   <script src="../../js/include2.js"></script>
-<?php }?>
-
 <body>
     <div id="global-container">
         <div id="container" class="global-wrap">
@@ -163,33 +151,7 @@ session_start();
                 </div>
             
                 <!-- トップページのコンテンツ slide show-->
-                <section class="slide-show-container">
-                    <div class="swiper">
-                        <!-- スライドメニュー -->
-                        <div class="swiper-wrapper">
-                            <!-- スライドメニュー内容を個々に追加してください -->
-                            <div class="swiper-slide">
-                                <img src="./img/open-pos.png" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="./img/option-pos.png" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="./img/clean-pos.png" alt="">    
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="./img/kaitori-pos.png" alt="">
-                            </div>
-        
-                            </div>  <!-- スライドのページネーション表示 -->
-                            <div class="swiper-pagination"></div>
-                            <!-- 「次へ」や「戻る」のアイコン表示 -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-                            <!-- スクロールバーの表示 -->
-                            <div class="swiper-scrollbar">
-                        </div>
-                    </section>
+
             </div>
         
         
@@ -272,102 +234,83 @@ session_start();
         
             <main class="main-wrap">
                 <div class="main-container">
-                    <article class="news-container">
-                        <h2>新着情報</h2>
-                        <div class="news-wrap">
-                            <div class="news-article">
-                                <div class="news-article__title">
-                                    <p>〇月〇日</p>
-                                </div>
-                                <div class="news-article__item">
-                                    <p>新規サイト開設致しました！<br>毎週日曜日に更新予定</p>
-                                </div>
-                            </div>
-                            <div class="news-article">
-                                <div class="news-article__title">
-                                    <p>〇月〇〇日</p>
-                                </div>
-                                <div class="news-article__item">
-                                    <p>最新機種を導入しました！</p>
-                                </div>
-                            </div>    
-                            <div class="news-article">
-                                <div class="news-article__title">
-                                    <p>〇月〇〇日<span class="new-icon">NEW</span></p>
-                                </div>
-                                <div class="news-article__item">
-                                    <p>なつかしのあの機種を導入しました！</p>
-                                </div>
-                            </div>    
+                    <h2>商品詳細</h2>
+                    <div class="merchandise-container">
+                        <div class="merchandise-container__image">
+                            <img src="./img-grid/banchou.png" alt="">
                         </div>
-                        
-                    </article>
-        
+                        <div class="merchandise-container__contents">
+                            <div class="titleSale">
+                                <h3>商品名：パチスロ〇〇〇〇〇〇</h3>
+                                <h4>価格：￥〇〇〇〇〇（税込み）</h4>
+                            </div>
+                        </div>
+                    </div>
                     <!-- メインのレイアウト調整用 -->
                     <h2>新着台情報</h2>
                     <div class="shopping-contents">
                         <div class="shopping-contents__item">
                             <span class="new-icon point">NEW</span>
-                            <a href="slot.html"><img src="./img-grid/baji.png" alt=""></a>
+                            <a href="#"><img src="./img-grid/baji.png" alt=""></a>
                             <p>パチスロ〇〇〇〇〇〇</p>
                             <p>￥〇〇〇〇〇(税込み)</p>
                         </div>
         
                         <div class="shopping-contents__item">
-                            <a href="slot.html"><img src="./img-grid/banchou.png" alt=""></a>
+                            <a href="#"><img src="./img-grid/banchou.png" alt=""></a>
                             <p>パチスロ〇〇〇〇〇〇</p>
                             <p>￥〇〇〇〇〇(税込み)</p>
                         </div>
         
                         <div class="shopping-contents__item">
-                            <a href="slot.html"><img src="./img-grid/gaisen.png" alt=""></a>
+                            <a href="#"><img src="./img-grid/gaisen.png" alt=""></a>
                             <p>パチスロ〇〇〇〇〇〇</p>
                             <p>￥〇〇〇〇〇(税込み)</p>
                         </div>
                     
                         <div class="shopping-contents__item">
-                            <a href="slot.html"><img src="./img-grid/hades.png" alt=""></a>
+                            <a href="#"><img src="./img-grid/hades.png" alt=""></a>
                             <p>パチスロ〇〇〇〇〇〇</p>
                             <p>￥〇〇〇〇〇(税込み)</p>
                         </div>
         
                         <div class="shopping-contents__item">
-                            <a href="slot.html"><img src="./img-grid/monhan.png" alt="">
-                            <p>パチスロ〇〇〇〇〇〇</p>
-                            <p>￥〇〇〇〇〇(税込み)</p>
-                            </a>
-                        </div>
-        
-                        <div class="shopping-contents__item">
-                            <a href="slot.html"><img src="./img-grid/sadako.png" alt="">
+                            <a href="#"><img src="./img-grid/monhan.png" alt="">
                             <p>パチスロ〇〇〇〇〇〇</p>
                             <p>￥〇〇〇〇〇(税込み)</p>
                             </a>
                         </div>
         
                         <div class="shopping-contents__item">
-                            <a href="slot.html"><img src="./img-grid/madoka1.png" alt="">
+                            <a href="#"><img src="./img-grid/sadako.png" alt="">
                             <p>パチスロ〇〇〇〇〇〇</p>
                             <p>￥〇〇〇〇〇(税込み)</p>
                             </a>
                         </div>
         
                         <div class="shopping-contents__item">
-                            <a href="slot.html"><img src="./img-grid/madoka.png" alt="">
+                            <a href="#"><img src="./img-grid/madoka1.png" alt="">
+                            <p>パチスロ〇〇〇〇〇〇</p>
+                            <p>￥〇〇〇〇〇(税込み)</p>
+                            </a>
+                        </div>
+        
+                        <div class="shopping-contents__item">
+                            <a href="#"><img src="./img-grid/madoka.png" alt="">
                             <p>パチスロ〇〇〇〇〇〇</p>
                             <p>￥〇〇〇〇〇(税込み)</p>
                             </a>
                         </div>
             
                         <div class="shopping-contents__item">
-                            <a href="slot.html"><img src="./img-grid/garufure.png" alt="">
+                            <a href="#"><img src="./img-grid/garufure.png" alt="">
                             <p>パチスロ〇〇〇〇〇〇</p>
                             <p>￥〇〇〇〇〇(税込み)</p>
                             </a>
                         </div>
         
                         <div class="shopping-contents__item">
-                            <a href="slot.html"><img src="./img-grid/rizero.png" alt="">
+                            <a href="#"><img src="./img-grid/rizero.png" alt="">
                             <p>パチスロ〇〇〇〇〇〇</p>
                             <p>￥〇〇〇〇〇(税込み)</p>
                             </a>
@@ -420,5 +363,4 @@ session_start();
 <script src="./scripts/libs/drop-down.js"></script>
 <script src="./scripts/main.js"></script>
 </body>
-
 </html>

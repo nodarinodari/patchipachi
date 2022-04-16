@@ -1,0 +1,15 @@
+@mixin greater-than-sign(
+    $top: 15px,
+    $left: 16px,
+    $tf-rotate: 45deg
+) {
+    content: "";
+    position: absolute;
+    left: $left;
+    top: $top;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid $cDarkGray;
+    border-right: 2px solid $cDarkGray;
+    transform: rotate($tf-rotate);
+}

@@ -1,0 +1,34 @@
+body, h1, h2, h3, h4, h5, img, p, a, ul, li, ol {
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+ul, li, ol {
+    padding: 0;
+}
+
+ul, li, ol, a {
+    text-decoration-style: none;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+a:link {
+    color: $cBlueLDark;
+}
+
+a:visited {
+    color: $cBlueLDark;
+}
+
+a:hover {
+    color: $cBlue;
+    text-decoration: underline;
+}
+
+a {
+    display: block;
+}

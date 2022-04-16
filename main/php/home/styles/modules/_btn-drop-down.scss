@@ -1,0 +1,16 @@
+@mixin btn-dd(
+    $bWidth: 100%,
+    $bHeight: 35px,
+    $bPosition: relative,
+    $bBgc: $cGray
+) {
+    width: $bWidth;
+    height: $bHeight;
+    line-height: $bHeight;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: $bPosition;
+    background-color: $bBgc;
+    font-weight: bold;
+}
