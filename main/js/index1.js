@@ -39,7 +39,7 @@ $(function() {
         }
     });
     //フリガナ
-    $("input[name='furigana']").blur(function() {
+    $("input[name='kananame']").blur(function() {
         if ($(this).val() == "") {
             $(this).css("background-color", "#FFCCCC");
             $("#errorfuri").text("入力してください。")
